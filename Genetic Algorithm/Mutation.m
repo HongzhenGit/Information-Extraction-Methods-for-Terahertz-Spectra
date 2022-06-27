@@ -1,18 +1,18 @@
 function ret=Mutation(pml,pmu,fitness,lenchrom,chrom,sizepop,pop,bound)
 %% Mutation operation
-% pmutation             input  : mutation proba
+% pmutation             input  : mutation probability
 % lenchrom              input  : the number of parameters
 % chrom                 input  
 % sizepop               input  : population size
 % pop                   input  
 % ret                   output : parameter set after mutation
 
-fitmin=min(fitness);    % Find out the best fitness(for adaptive mutation proba)
+fitmin=min(fitness);    % Find out the best fitness(for adaptive mutation probability)
 fitmax=max(fitness);    % Find out the worst fitness
 for i=1:sizepop  
-    % The mutation operation is determined by mutation proba
+    % The mutation operation is determined by mutation probability
     pick=rand;
-    % Calculate adaptive mutation proba
+    % Calculate adaptive mutation probability
     if fitness(i)>mean(fitness)         
         pmutation=pml;
     else
