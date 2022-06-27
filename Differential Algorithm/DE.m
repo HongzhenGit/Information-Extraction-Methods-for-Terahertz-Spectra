@@ -98,8 +98,8 @@ popold=zeros(size(pop)); % Population Matrix during interation
 val=zeros(1,NP);         % Matrix for fitness value of each individual
 
 %% Read and process the signals
-MeaData=textread('20190524∏…‘Ôπ˝≥Ã10£∫20.txt');                                        
-RefData=textread('20190524∏…‘Ôπ˝≥Ã≤Œøº.txt');                                        
+MeaData=textread('DE_measured.txt');                                        
+RefData=textread('DE_reference.txt');                                        
 ts=RefData(:,1)';
 dt=ts(2)-ts(1);
 N=length(ts);
@@ -734,7 +734,7 @@ end
 %% Fitness Curve
 figure
 plot(bb,'LineWidth',2)
-title(['Fitness Curve' 'Iteration Stopped£Ω' num2str(itermax)]);
+title(['Fitness Curve' 'Iteration StoppedÔºù' num2str(itermax)]);
 xlabel('Number of iterations');ylabel('Fitness');
 grid on
 %% Some Plotting Commands
