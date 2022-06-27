@@ -28,12 +28,12 @@ popmin2=-1;
 bound=[popmin popmax;popmin1 popmax1;popmin1 popmax1;popmin2 popmax2;popmin2 popmax2];  
 
 % Read the refrence/measurement signals of samples
-MeaData=textread('jinxinceliang.txt');     
+MeaData=textread('GA_measured.txt');     
 ts=MeaData(:,1);
 measure=MeaData(:,2);
 % measure=eemd(measure,0.2,150);
 N=length(measure);
-RefData=textread('jinxincankao.txt');                   
+RefData=textread('GA_reference.txt');                   
 reference=RefData(:,2);
 reference=sigshift(reference,9000,N);
 
@@ -130,7 +130,7 @@ sig2=zbest(5)*sigshift(cankaoshift,zbest(3),N);
 sig=sig1+sig2;
 %%
 plot(yy,'linewidth',2);
-title(['Fiteness Curve' 'Iteration Stopped£½' num2str(maxgen)]);
+title(['Fiteness Curve' 'Iteration StoppedÂ£Â½' num2str(maxgen)]);
 xlabel('Number of iterations');ylabel('Fitness');
 grid on
 figure
