@@ -1,5 +1,5 @@
 function flag=test(bound,code)
-%% Test whether a parameter set is falling into its bound
+%% Test whether a parameter vector is falling into its bound
 % lenchrom   input 
 % bound      input 
 % code       output
