@@ -69,7 +69,7 @@ for i=1:popsize
     fitness(i)=fun(GApop(i,:),reference,measure,N);            
 end
 
-% Find out he best parameter set
+% Find out he best parameter vector
 [bestfitness,bestindex]=min(fitness);
 zbest=GApop(bestindex,:);   % Population Best
 gbest=GApop;                % Individual Best
