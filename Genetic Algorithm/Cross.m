@@ -7,11 +7,11 @@ function ret=Cross(pcl,pcu,fitness,lenchrom,chrom,sizepop,bound)
 % ret                   output : the result after cross operation
 
 fitness= 1./(fitness);       % Turns the target into a minimum optimization problem
-fitmin=min(fitness);         % Find out the best fitness(for adaptive cross proba)
-fitmax=max(fitness);         % Find out the worst fitness(for adaptive cross proba)
+fitmin=min(fitness);         % Find out the best fitness(for adaptive cross probability)
+fitmax=max(fitness);         % Find out the worst fitness(for adaptive cross probability)
 
 for i=1:sizepop   
-    % Random perform cross operation on two parameter sets
+    % Random perform cross operation on two parameter vectors
     pick=rand(1,2);
     while prod(pick)==0
         pick=rand(1,2);
@@ -22,7 +22,7 @@ for i=1:sizepop
     while pick==0
         pick=rand;
     end
-    % Calculate the adaptive proba
+    % Calculate the adaptive probability
     if fitness(i)>mean(fitness)         
         pcross=pcl+(pcu-pcl)*(fitness(i)-fitmin)/(fitmax-fitmin);
     else
