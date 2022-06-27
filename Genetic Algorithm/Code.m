@@ -2,7 +2,7 @@ function ret=Code(lenchrom,bound)
 %% Generate parameter sets within a specific bound
 % lenchrom   input : the number of parameters
 % bound      input : the bound of parameters
-% ret        output: final coded paramter set
+% ret        output: final coded paramter vector
 
 flag=0;
 while flag==0
