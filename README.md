@@ -8,6 +8,6 @@ We consider our measured signal(the signal that has propagated through our sampl
 And this is what our measured signal looks like:<br>
 ![Mea_Signal](/assets/img/philly-magic-garden.jpg "Magic Gardens")<br>
 Then the linear combination would be like:
-$$E_mea(t)=k_1 E(t+\Delta t$$
+$$E_m_e_a(t)=k_1 E(t+\Delta t$$
 The loss function we would like to minimize is the sum of squared residuals
 
