@@ -48,7 +48,7 @@ $$H_{i}^{k}=V_{best}^{k}+F(V_{p1}^{k}-V_{p2}^{k})$$
 $$H_{i}^{k}=V_{i}^{k}+F(V_{best}^{k}-V_{i}^{k})+F(V_{p1}^{k}-V_{p2}^{k})$$
 <br>
 Some references for Differential Algorithm:<br>
-**[4]A.K. Qin, V.L. Huang, P.N. Suganthan, Differential evolution algorithm with strategy adaptation for global numerical optimization, IEEE Trans. Evol. Comput. 13 (2009) 398–417.**<br>
+***[4] A.K. Qin, V.L. Huang, P.N. Suganthan, Differential evolution algorithm with strategy adaptation for global numerical optimization, IEEE Trans. Evol. Comput. 13 (2009) 398–417.***<br>
 For more details and discussions regarding the research above, please check my paper:<br>
-**[5]H. Zhang, L. Shi, M. He, Extension of terahertz time-domain spectroscopy: A micron-level thickness gauging technology, Opt. Commun. 506 (2022) 127597.**<br>
+***[5] H. Zhang, L. Shi, M. He, Extension of terahertz time-domain spectroscopy: A micron-level thickness gauging technology, Opt. Commun. 506 (2022) 127597.***<br>
 
