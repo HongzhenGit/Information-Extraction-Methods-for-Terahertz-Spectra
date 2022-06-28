@@ -32,4 +32,9 @@ Where $H(\omega)$ is the transfer function of our sample. Within this transfer f
 $$n=\sqrt{Debye/Lorentz model}$$
 By IFFT(Inverse Fast Fourier Transformation):
 $$E_{fit}(t)=IFFT(E_{fit}(\omega))=IFFT(E_{r}(\omega)H(\omega))$$
-Then we could subsititue it into $Fitting Error$ to get the target optimization loss function.
+Then we could subsititue it into $Fitting Error$ to get the target optimization loss function.<br>
+Some references for Debye/Lorentz model:<br>
+***I. Kehuda, S. Khatun, K.J. Reza, M.M. Rahman, M.M. Fakir, Improved debye model for experimental approximation of human breast tissue properties at 6GHz ultra-wideband centre frequency, Int. J. Eng. Technol. 5 (2014) 4708–4717.***<br>
+***V.P. Drachev, U.K. Chettiar, A.V. Kildishev, The ag dielectric function in plasmonic metamaterials, Opt. Express 16 (2008) 1186–1195.***
+## Parameter Estimation for the frequency domain model
+For the 
