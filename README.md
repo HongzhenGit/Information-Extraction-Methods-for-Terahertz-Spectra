@@ -8,7 +8,7 @@ We consider our measured signal(the signal that has propagated through our sampl
 And this is what our measured signal looks like:<br>
 ![Mea_Signal](/assets/img/philly-magic-garden.jpg "Magic Gardens")<br>
 Then the linear combination would be like:
-$$E_m(t)=k_1 E_r(t+\Delta t_1) + k_2 E_r(t+\Delta t_2)$$
+$$E_fit (t)=k_1 E_r(t+\Delta t_1) + k_2 E_r(t+\Delta t_2)$$
 with parameters $k_1, \Delta t_1, k_2, \Delta t_2$. <br>
 The loss function we would like to minimize is the sum of squared residuals
 
