@@ -26,4 +26,6 @@ $$p_{m,i}=p_{m,lower}+(p_{m,upper}-p_{m_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{m
 For cross probabality:
 $$p_{c,i}=p_{c,lower}+(p_{c,upper}-p_{c_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
 ## Mathematical Model in the frequency domain
-
+We could also construct the model in frequency domain:
+$$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
+Where $H(\omega)$ is the transfer function of our sample and its form is depending on its structure. Within this transfer function, the reflection index $$
