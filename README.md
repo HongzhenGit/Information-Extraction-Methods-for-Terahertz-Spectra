@@ -18,13 +18,14 @@ As mentioned before, this magnetic signal has no explicit function form, which m
 2) The bounds for our parameter vector is known, which means the optimization searching would only happen within a specific solution space.<br>
 
 For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:<br>
-***H. Zhang, M. He, L. Shi. Terahertz Thickness Measurement Based on Stochastic Optimization Algorithm, Spectrosc. Spectral Anal. 40(2020) 3066-3070.***
+***[1] H. Zhang, M. He, L. Shi. Terahertz Thickness Measurement Based on Stochastic Optimization Algorithm, Spectrosc. Spectral Anal. 40(2020) 3066-3070.(in Chinese)***
 ### Some Adaptive Strategies for GA
 To gurantee the diversity in the late iterations, some adaptive strategies might be applied when updating the population.
 For mutation probabality:
 $$p_{m,i}=p_{m,lower}+(p_{m,upper}-p_{m_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
 For cross probabality:
 $$p_{c,i}=p_{c,lower}+(p_{c,upper}-p_{c_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
+The "lower" and "upper" mean the lower and upper bound of mutation/cross probability.
 ## Mathematical Model in the frequency domain
 We could also construct the model in frequency domain:
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
@@ -34,7 +35,12 @@ By IFFT(Inverse Fast Fourier Transformation):
 $$E_{fit}(t)=IFFT(E_{fit}(\omega))=IFFT(E_{r}(\omega)H(\omega))$$
 Then we could subsititue it into $Fitting Error$ to get the target optimization loss function.<br>
 Some references for Debye/Lorentz model:<br>
-***I. Kehuda, S. Khatun, K.J. Reza, M.M. Rahman, M.M. Fakir, Improved debye model for experimental approximation of human breast tissue properties at 6GHz ultra-wideband centre frequency, Int. J. Eng. Technol. 5 (2014) 4708–4717.***<br>
-***V.P. Drachev, U.K. Chettiar, A.V. Kildishev, The ag dielectric function in plasmonic metamaterials, Opt. Express 16 (2008) 1186–1195.***
+***[2] I. Kehuda, S. Khatun, K.J. Reza, M.M. Rahman, M.M. Fakir, Improved debye model for experimental approximation of human breast tissue properties at 6GHz ultra-wideband centre frequency, Int. J. Eng. Technol. 5 (2014) 4708–4717.***<br>
+***[3] V.P. Drachev, U.K. Chettiar, A.V. Kildishev, The ag dielectric function in plasmonic metamaterials, Opt. Express 16 (2008) 1186–1195.***
 ## Parameter Estimation for the frequency domain model
-For the 
+Another heuristic algorithm named Differential Evolution(DE) is involved to estimate the parameters of our frequency model. We compared the performance of GA and DE, and it was observed that in most cases DE is the better one.<br>
+Like GA, here are some adaptive strategies designed for DE to gurantee its population diversity druing late iterations:<br>
+1) DE/Rand/1, Random Selection
+$$H_{i}^{k}=V_{p1}^{k}+F(V_{p2}^{k}-V_{p3}^{k})$$
+2) DE/Best/1, Random Selection
+$$H_{i}^{k}=V_{best}^{k}+F(V_{p1}^{k}-V_{p2}^{k})$$
