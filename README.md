@@ -17,7 +17,10 @@ As mentioned before, this magnetic signal has no explicit function form, which m
 1) GA algorithm is not a gradient-based optimization method so it could be leveraged to optimize target functions which are not differentiable.<br>
 2) The bounds for our parameter vector is known, which means the optimization searching would only happen within a specific solution space.<br>
 ### Some Adaptive Strategies for GA
-To gurantee the diversity in the late iterations, some adaptive strategies might be applied when updating the population:
+To gurantee the diversity in the late iterations, some adaptive strategies might be applied when updating the population.
+For mutation probabality:
 $$p_{m,i}=p_{m,lower}+(p_{m,upper}-p_{m_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
+For cross probabality:
+$$p_{c,i}=p_{c,lower}+(p_{c,upper}-p_{c_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
 ## Mathematical Model in the frequency domain
 
