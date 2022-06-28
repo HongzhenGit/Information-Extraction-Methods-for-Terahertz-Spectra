@@ -18,7 +18,7 @@ As mentioned before, this magnetic signal has no explicit function form, which m
 2) The bounds for our parameter vector is known, which means the optimization searching would only happen within a specific solution space.<br>
 
 For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:<br>
-H. Zhang, M. He, L. Shi. Terahertz Thickness Measurement Based on Stochastic Optimization Algorithm, Spectrosc. Spectral Anal. 40(2020) 3066-3070.
+***H. Zhang, M. He, L. Shi. Terahertz Thickness Measurement Based on Stochastic Optimization Algorithm, Spectrosc. Spectral Anal. 40(2020) 3066-3070.***
 ### Some Adaptive Strategies for GA
 To gurantee the diversity in the late iterations, some adaptive strategies might be applied when updating the population.
 For mutation probabality:
@@ -30,3 +30,6 @@ We could also construct the model in frequency domain:
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
 Where $H(\omega)$ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index ***n*** and the thickness ***d***. Here ***n*** is a function of frequency, and the Debye/Lorentz model could be leveraged to illustrate this function relationship. 
 $$n=\sqrt{Debye/Lorentz model}$$
+By IFFT(Inverse Fast Fourier Transformation):
+$$E_{fit}(t)=IFFT(E_{fit}(\omega))=IFFT(E_{r}(\omega)H(\omega))$$
+Then we could subsititue it into $Fitting Error$ to get the target optimization loss function.
