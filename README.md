@@ -28,7 +28,7 @@ The "lower" and "upper" mean the lower and upper bound of mutation/cross probabi
 We could also construct the model in frequency domain:
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
 Where $H(\omega)$ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index ***n*** and the thickness ***d***. Here ***n*** is a function of frequency, and the Debye/Lorentz model could be leveraged to illustrate this function relationship. 
-$$n=\sqrt{Debye/Lorentz model}$$
+$$n=\sqrt{Debye/Lorentz Model}$$
 By IFFT(Inverse Fast Fourier Transformation):
 $$E_{fit}(t)=IFFT(E_{fit}(\omega))=IFFT(E_{r}(\omega)H(\omega))$$
 Then we could subsititue it into $Fitting Error$ to get the target optimization loss function.<br>
