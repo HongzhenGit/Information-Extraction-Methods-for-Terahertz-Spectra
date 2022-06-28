@@ -28,4 +28,5 @@ $$p_{c,i}=p_{c,lower}+(p_{c,upper}-p_{c_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{m
 ## Mathematical Model in the frequency domain
 We could also construct the model in frequency domain:
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
-Where $H(\omega)$ is the transfer function of our sample and its form is depending on its structure. Within this transfer function, the reflection index $$
+Where $H(\omega)$ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index ***n*** and the thickness ***d***. Here ***n*** is a function of frequency, and the Debye/Lorentz model could be leveraged to illustrate this function relationship. 
+$$n=\sqrt{Debye/Lorentz model}$$
