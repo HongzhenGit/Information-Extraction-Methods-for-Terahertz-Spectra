@@ -1,1 +1,1 @@
-Here are some illustrations and original data.
+Here are some illustrations.
