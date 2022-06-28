@@ -46,7 +46,7 @@ $$H_{i}^{k}=V_{p1}^{k}+F(V_{p2}^{k}-V_{p3}^{k})$$
 $$H_{i}^{k}=V_{best}^{k}+F(V_{p1}^{k}-V_{p2}^{k})$$
 3) DE/Current to Best/1. Current Member, Best Member and Random Selection
 $$H_{i}^{k}=V_{i}^{k}+F(V_{best}^{k}-V_{i}^{k})+F(V_{p1}^{k}-V_{p2}^{k})$$
-<br>
+
 Some references for Differential Algorithm:<br>
 ***[4] A.K. Qin, V.L. Huang, P.N. Suganthan, Differential evolution algorithm with strategy adaptation for global numerical optimization, IEEE Trans. Evol. Comput. 13 (2009) 398–417.***<br>
 For more details and discussions regarding the research above, please check my paper:<br>
