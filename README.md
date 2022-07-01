@@ -23,7 +23,7 @@ For cross probabality:
 $$p_{c,i}=p_{c,lower}+(p_{c,upper}-p_{c_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
 The "lower" and "upper" mean the lower and upper bound of mutation/cross probability.<br>
 Here is some fiiting results for the Time Domain Model:<br>
-![Mea_Signal](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Sample%20Signals.png)<br>
+![Mea_Signal Time Domain](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Sample%20Signals.png)<br>
 ## Mathematical Model in the frequency domain
 We could also construct the model in frequency domain:
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
@@ -49,4 +49,6 @@ Some references for Differential Algorithm:<br>
 ***[4] A.K. Qin, V.L. Huang, P.N. Suganthan, Differential evolution algorithm with strategy adaptation for global numerical optimization, IEEE Trans. Evol. Comput. 13 (2009) 398–417.***<br>
 For more details and discussions regarding the research above, please check my paper:<br>
 ***[5] H. Zhang, L. Shi, M. He, Extension of terahertz time-domain spectroscopy: A micron-level thickness gauging technology, Opt. Commun. 506 (2022) 127597.***<br>
-
+Here is some fiiting results for the Frequency Domain Model:<br>
+![Mea_Signal Frequency Domain](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Sample%20Signals.png)<br>
+## Discussion about the convergence performance
