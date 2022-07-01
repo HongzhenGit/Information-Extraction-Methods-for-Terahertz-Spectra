@@ -3,8 +3,6 @@ Here is the repository for my postgraduation project. The main focus of this pro
 ## Mathematical Model in the time domain
 We consider our measured signal(the signal that has propagated through our samples) as a linear combination of reference signals(at different time points), based on the concept of "Time-of-Flight":<br>
 ![Time_of_Flight](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/time_of_flight.png)<br>
-And this is what our measured signal looks like:<br>
-![Mea_Signal](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Sample%20Signals.png)<br>
 Then the linear combination would be like:
 $$E_{fit} (t)=k_1 E_r(t+\Delta t_1) + k_2 E_r(t+\Delta t_2)$$
 with parameters $k_1, \Delta t_1, k_2, \Delta t_2$. <br>
@@ -23,7 +21,9 @@ For mutation probabality:
 $$p_{m,i}=p_{m,lower}+(p_{m,upper}-p_{m_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
 For cross probabality:
 $$p_{c,i}=p_{c,lower}+(p_{c,upper}-p_{c_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
-The "lower" and "upper" mean the lower and upper bound of mutation/cross probability.
+The "lower" and "upper" mean the lower and upper bound of mutation/cross probability.<br>
+Here is some fiiting results for the Time Domain Model:<br>
+![Mea_Signal](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Sample%20Signals.png)<br>
 ## Mathematical Model in the frequency domain
 We could also construct the model in frequency domain:
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
