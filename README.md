@@ -52,3 +52,4 @@ For more details and discussions regarding the research above, please check my p
 Here is some fiiting results for the Frequency Domain Model:<br>
 ![Mea_Signal Frequency Domain](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Fitting_results_for_Frequency_Domain_Method.png)<br>
 ## Discussion about the convergence performance
+When appling heuristic algorithms to find out a optimal solution, a large-enough number of iterations would be required to guarantee its convergence.
