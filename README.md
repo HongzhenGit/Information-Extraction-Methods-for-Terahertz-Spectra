@@ -50,5 +50,5 @@ Some references for Differential Algorithm:<br>
 For more details and discussions regarding the research above, please check my paper:<br>
 ***[5] H. Zhang, L. Shi, M. He, Extension of terahertz time-domain spectroscopy: A micron-level thickness gauging technology, Opt. Commun. 506 (2022) 127597.***<br>
 Here is some fiiting results for the Frequency Domain Model:<br>
-![Mea_Signal Frequency Domain](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Sample%20Signals.png)<br>
+![Mea_Signal Frequency Domain](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Fitting_results_for_Frequency_Domain_Method.png)<br>
 ## Discussion about the convergence performance
