@@ -27,7 +27,7 @@ Here is some fiiting results for the Time Domain Model:<br>
 ## Mathematical Model in the frequency domain
 We could also construct the model in frequency domain:
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
-Where $H(\omega)$ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index ***n*** and the thickness ***d***. Here ***n*** is a function of frequency, and the Debye/Lorentz model could be leveraged to illustrate this function relationship. 
+Where $H(\omega)$ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index ***n*** and the thickness ***d***. Here ***n*** is a function of frequency, and a Debye or Lorentz model could be leveraged to illustrate this function relationship. 
 $$n=\sqrt{Debye/Lorentz Model}$$
 By IFFT(Inverse Fast Fourier Transformation):
 $$E_{fit}(t)=IFFT(E_{fit}(\omega))=IFFT(E_{r}(\omega)H(\omega))$$
@@ -52,4 +52,6 @@ For more details and discussions regarding the research above, please check my p
 Here is some fiiting results for the Frequency Domain Model:<br>
 ![Mea_Signal Frequency Domain](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Fitting_results_for_Frequency_Domain_Method.png)<br>
 ## Discussion about the convergence performance
-When appling heuristic algorithms to find out a optimal solution, a large-enough number of iterations would be required to guarantee its convergence.
+When appling heuristic algorithms to find out a optimal solution, a large-enough number of iterations would be required to guarantee its convergence. In our case, if the fitting error < 145, it will be a converged case, which means, the estimated parameters are as our desiring in compared to our benchmark. We counted the number of trials with a larger fitting error than 145 out of 200 trials by different number of iterations, and illustrate their relationship:<br>
+![Mea_Signal Frequency Domain](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Fitting_results_for_Frequency_Domain_Method.png)<br>
+There seems to be a Sigmoid-like curve between the number of ourtliers and the number of iterations. We could see that, in our case, at least 90 iterations are required to garantee the convergence of DE algorithm. But there are still about 25 outliers even though the number of iterations is relatively large. The next step of our research, is to enhance the stability and improve the convergence performance of our heuristic algorithm.
