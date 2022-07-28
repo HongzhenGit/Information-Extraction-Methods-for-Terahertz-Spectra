@@ -12,6 +12,7 @@ $$Fitting Error = \sum_{i=1}^n ( E_{mea} (t_i) - E_{fit}(t_i))$$
 As mentioned before, this magnetic signal has no explicit function form, which means it would be hard to calculate the gradients of our loss function regarding the parameters $\Delta t_1, \Delta t_2$. In this case, we would like to leverage a heuristic algorithm called Genetic Algorithm(GA) to help us find the best estimated parameters. Here are some reasons why heuristic algorithm is applicable for our senerio:<br>
 1) GA algorithm is not a gradient-based optimization method so it could be leveraged to optimize target functions which are not differentiable.<br>
 2) The bounds for our parameter vector is known, which means the optimization searching would only happen within a specific solution space.<br>
+
 Once the parameters are calibrated, the thickness and refractive index could be calculated according to Time of Flight (TOF) theory and Fresnel’s Law.<br>
 
 For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:<br>
@@ -37,7 +38,8 @@ Some references for Debye/Lorentz model:<br>
 ***[2] I. Kehuda, S. Khatun, K.J. Reza, M.M. Rahman, M.M. Fakir, Improved debye model for experimental approximation of human breast tissue properties at 6GHz ultra-wideband centre frequency, Int. J. Eng. Technol. 5 (2014) 4708–4717.***<br>
 ***[3] V.P. Drachev, U.K. Chettiar, A.V. Kildishev, The ag dielectric function in plasmonic metamaterials, Opt. Express 16 (2008) 1186–1195.***
 ### Parameter Estimation for the frequency domain model
-Another heuristic algorithm named Differential Evolution(DE) is involved to estimate the parameters of our frequency model. We compared the performance of GA and DE, and it was observed that in most cases DE is the better one. Once the parameters are calibrated, the thickness and refractive index could be extracted simultaneously <br>
+Another heuristic algorithm named Differential Evolution(DE) is involved to estimate the parameters of our frequency model. We compared the performance of GA and DE, and it was observed that in most cases DE is the better one. <br>
+Once the parameters are calibrated, the thickness and refractive index could be extracted simultaneously. <br>
 Like GA, here are some adaptive strategies designed for DE to gurantee its population diversity during late iterations:<br>
 1) DE/Rand/1. Random Selection
 $$H_{i}^{k}=V_{p1}^{k}+F(V_{p2}^{k}-V_{p3}^{k})$$
