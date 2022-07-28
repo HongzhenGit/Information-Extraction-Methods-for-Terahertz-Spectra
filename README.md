@@ -38,8 +38,7 @@ Some references for Debye/Lorentz model:<br>
 ***[2] I. Kehuda, S. Khatun, K.J. Reza, M.M. Rahman, M.M. Fakir, Improved debye model for experimental approximation of human breast tissue properties at 6GHz ultra-wideband centre frequency, Int. J. Eng. Technol. 5 (2014) 4708–4717.***<br>
 ***[3] V.P. Drachev, U.K. Chettiar, A.V. Kildishev, The ag dielectric function in plasmonic metamaterials, Opt. Express 16 (2008) 1186–1195.***
 ### Parameter Estimation for the frequency domain model
-Another heuristic algorithm named Differential Evolution(DE) is involved to estimate the parameters of our frequency model. We compared the performance of GA and DE, and it was observed that in most cases DE is the better one. <br>
-Once the parameters are calibrated, the thickness and refractive index could be extracted simultaneously. <br>
+Another heuristic algorithm named Differential Evolution(DE) is involved to estimate the parameters of our frequency model. Once the parameters are calibrated, the thickness and refractive index could be extracted simultaneously. We compared the performance of GA and DE, and it was observed that in most cases DE is the better one. <br>
 Like GA, here are some adaptive strategies designed for DE to gurantee its population diversity during late iterations:<br>
 1) DE/Rand/1. Random Selection
 $$H_{i}^{k}=V_{p1}^{k}+F(V_{p2}^{k}-V_{p3}^{k})$$
