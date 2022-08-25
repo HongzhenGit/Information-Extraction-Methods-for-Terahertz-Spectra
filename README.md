@@ -60,4 +60,8 @@ When appling heuristic algorithms to find out a optimal solution, a large-enough
 ![Convergence Performance](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/iteration_convergence_performance.png)<br>
 There seems to be a Sigmoid-like curve between the number of ourtliers and the number of iterations. We could see that, in our case, at least 90 iterations are required to garantee the convergence of DE algorithm. But there are still about 25 outliers even though the number of iterations is relatively large. The next step of our research, is to enhance the stability and improve the convergence performance of our heuristic algorithm.
 ## Sparse Deconvolution Approach for Pulse Position Extraction
-Heuristic Optimization might not converge to a fixed point in every signal trail, and they are also time-consuming. To improve the stability and speed of our method, we reformulated the pulse detection problem with a sparse deconvolution structure.
+Heuristic Optimization might not converge to a fixed point in every signal trail, and they are also time-consuming. To improve the stability and speed of our method, we reformulated the pulse detection problem into the form of sparse deconvolution. 
+For more information about sparse deconvolution, please refer:<br>
+***[6]F. Bobmann, G. Plonka, T. Peter, O. Nemitz and T. Schmitte, Sparse Deconvolution Methods for Ultrasonic NDT, J. Nondestruct Eval. 31 (2012) 225–244.***<br>
+and<br>
+***[7]J. Dong, J.B. Jackson, M.Melis, et al. Terahertz frequency-wavelet domain deconvolution for stratigraphic and subsurface investigation of art painting, Optics Express 24(2016) 26972.***<br>
