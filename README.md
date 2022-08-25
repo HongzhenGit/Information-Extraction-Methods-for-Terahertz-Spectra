@@ -25,7 +25,7 @@ For cross probabality:
 $$p_{c,i}=p_{c,lower}+(p_{c,upper}-p_{c_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
 The "lower" and "upper" mean the lower and upper bound of mutation/cross probability.<br>
 Here is some fiiting results for the Time Domain Model:<br>
-![Mea_Signal Time Domain](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Sample%20Signals.png)<br>
+![Mea_Signal Time Domain](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/Sample%20Signals.png)<br>
 ## Extract information from the frequency domain spectrum
 We could also construct the model in frequency domain:
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
