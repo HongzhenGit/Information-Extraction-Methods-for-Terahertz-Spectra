@@ -72,4 +72,4 @@ For more information about sparse deconvolution, please refer:<br>
 Here are some priliminary results:<br>
 ![Sparse Parameter Vector](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/h%20vector.PNG)
 ![Signal Rebuilt with Sparse Deconvolution](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/rebuilt%20signal.PNG)<br>
-The figure on the left is the sparse parameter vector for the sample on the right. We expected there would be only two non-zero peaks, however, there are 5 in the actual parameter vector, and 3 of them are very close. In the following research, we need to improve the sensitivity of this sparse deconvolution method. 
+The figure on the left is the sparse parameter vector for the sample on the right. We expected there would be only 2 non-zero peaks, however, there are 5 in the actual parameter vector, and 3 of them are very close. In the following research, we need to improve the sensitivity of this sparse deconvolution method. 
