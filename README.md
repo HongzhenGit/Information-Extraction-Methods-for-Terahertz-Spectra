@@ -17,6 +17,7 @@ Once the parameters are calibrated, the thickness and refractive index could be 
 
 For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:<br>
 ***[1] H. Zhang, M. He, L. Shi. Terahertz Thickness Measurement Based on Stochastic Optimization Algorithm, Spectrosc. Spectral Anal. 40(2020) 3066-3070.(in Chinese)***
+
 ### Some Adaptive Strategies for GA
 To gurantee the diversity in the late iterations, some adaptive strategies might be applied when updating the population.
 For mutation probabality:
@@ -26,6 +27,7 @@ $$p_{c,i}=p_{c,lower}+(p_{c,upper}-p_{c_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{m
 The "lower" and "upper" mean the lower and upper bound of mutation/cross probability.<br>
 Here is some fiiting results for the Time Domain Model:<br>
 ![Mea_Signal Time Domain](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/Sample%20Signals.png)<br>
+
 ## Extract information from the frequency domain spectrum
 We could also construct the model in frequency domain:
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
