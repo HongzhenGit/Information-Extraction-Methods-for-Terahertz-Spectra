@@ -1,4 +1,5 @@
 # Information Extraction Methods for Teraheartz Spectra
+$$a=b+c$$
 Here is the repository for my postgraduation project. The main focus of this project is to extract information from the spectra of magnetic waves and find its application in the real engineering industry. Our signal is ditributed within a limited range in the time domain and does not have a explicit function form. 
 ## Extract information from the time domain spectrum
 We consider our measured signal(the signal that has propagated through sample mediums) as a linear combination of reference signals(at different time points), based on the concept of "Time-of-Flight":<br>
