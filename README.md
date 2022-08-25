@@ -66,5 +66,5 @@ Where ***y*** is the vector of actually measured signal, ***h*** is a parameter 
 $$min1\frac{2}||***Ah***-***y***||_{2}+\lambda||***h***||_{1}$$
 and solved by a LASSO algorithm proposed by M. Tabassum (2018). 
 For more information about sparse deconvolution, please refer:<br>
-***[6] F. Bobmann, G. Plonka, T. Peter, O. Nemitz and T. Schmitte, Sparse Deconvolution Methods for Ultrasonic NDT, J. Nondestruct Eval. 31 (2012) 225–244.***<br>
+***[6] F. Bobmann, G. Plonka, T. Peter, O. Nemitz and T. Schmitte, Sparse Deconvolution Methods for Ultrasonic NDT, J. Nondestruct Eval. 31 (2012) 225–244.***
 and ***[7] J. Dong, J.B. Jackson, M.Melis, et al. Terahertz frequency-wavelet domain deconvolution for stratigraphic and subsurface investigation of art painting, Optics Express 24(2016) 26972.***<br>
