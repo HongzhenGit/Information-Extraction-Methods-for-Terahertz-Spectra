@@ -72,3 +72,4 @@ For more information about sparse deconvolution, please refer:<br>
 Here are some priliminary results:<br>
 ![Sparse Parameter Vector](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/h%20vector.PNG)
 ![Signal Rebuilt with Sparse Deconvolution](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/rebuilt%20signal.PNG)<br>
+The fugure on the left is the sparse parameter vector for the sample on the right.
