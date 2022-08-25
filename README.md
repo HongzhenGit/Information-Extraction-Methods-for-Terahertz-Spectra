@@ -63,6 +63,7 @@ There seems to be a Sigmoid-like curve between the number of ourtliers and the n
 Heuristic Optimization might not converge to a fixed point in every signal trail, and they are also time-consuming. To improve the stability and speed of our method, we reformulated the pulse detection problem into the form of sparse deconvolution: 
 $$***y***=***Ah***+***e***$$
 Where ***y*** is the vector of actually measured signal, ***h*** is a parameter vector of which lots of elements are zero, ***e*** is the noise term, and matrix ***A*** is consisted of i-laged referece signal ***r***^{i}:
+$$***A***=[***r***^{0}, ***r***^{1}, ..., ***r***^{n}]$$
 For more information about sparse deconvolution, please refer:<br>
 ***[6] F. Bobmann, G. Plonka, T. Peter, O. Nemitz and T. Schmitte, Sparse Deconvolution Methods for Ultrasonic NDT, J. Nondestruct Eval. 31 (2012) 225–244.***<br>
 and ***[7] J. Dong, J.B. Jackson, M.Melis, et al. Terahertz frequency-wavelet domain deconvolution for stratigraphic and subsurface investigation of art painting, Optics Express 24(2016) 26972.***<br>
