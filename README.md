@@ -49,7 +49,7 @@ $$n=\sqrt{Debye/Lorentz Model}$$
 
 By IFFT(Inverse Fast Fourier Transformation):
 
-$$E_{fit}(t)=IFFT(E_{fit}(\omega))=IFFT(E_{r}(\omega)H(\omega))$$
+$$E_{fit}(t)=IFFT(E_{fit}(\omega))=IFFT(E_{r}(\omega)H(\omega)) \quad with \quad parameters \quad n, \quad d $$
 
 Then we could subsititue it into _Fitting Error_ to get the target optimization loss function.
 
