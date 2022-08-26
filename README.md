@@ -19,7 +19,7 @@ As mentioned before, this magnetic signal has no explicit function form, which m
 1) GA algorithm is not a gradient-based optimization method so it could be leveraged to optimize target functions which are not differentiable.<br>
 2) The bounds for our parameter vector is known, which means the optimization searching would only happen within a specific solution space.<br>
 
-Once the parameters are calibrated, the thickness and refractive index could be calculated according to Time of Flight (TOF) theory and Fresnel’s Equation.<br>For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:<br>
+Once the parameters are calibrated, the thickness and refractive index could be calculated according to Time of Flight (TOF) theory and Fresnel’s Equation. For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:<br>
 ***[1] H. Zhang, M. He, L. Shi. Terahertz Thickness Measurement Based on Stochastic Optimization Algorithm, Spectrosc. Spectral Anal. 40(2020) 3066-3070.(in Chinese)***
 
 ### Some Adaptive Strategies for GA
@@ -49,9 +49,7 @@ By IFFT(Inverse Fast Fourier Transformation):
 
 $$E_{fit}(t)=IFFT(E_{fit}(\omega))=IFFT(E_{r}(\omega)H(\omega)) \quad with \quad parameters \quad n, \quad d $$
 
-Then we could subsititue it into _Fitting Error_ to get the target optimization loss function.
-
-Some references for Debye/Lorentz model:<br>
+Then we could subsititue it into _Fitting Error_ to get the target optimization loss function. Some references for Debye/Lorentz model:<br>
 ***[2] I. Kehuda, S. Khatun, K.J. Reza, M.M. Rahman, M.M. Fakir, Improved debye model for experimental approximation of human breast tissue properties at 6GHz ultra-wideband centre frequency, Int. J. Eng. Technol. 5 (2014) 4708–4717.***<br>
 ***[3] V.P. Drachev, U.K. Chettiar, A.V. Kildishev, The ag dielectric function in plasmonic metamaterials, Opt. Express 16 (2008) 1186–1195.***
 
