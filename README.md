@@ -37,9 +37,7 @@ The "lower" and "upper" mean the lower and upper bound of mutation/cross probabi
 ## Extract information from the frequency domain spectrum
 We could also construct the model in frequency domain:
 
-$$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$ 
-
-Where $H(\omega)$ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index $n$ and the thickness $d$. Here $n$ is a function of frequency, and a Debye or Lorentz model could be leveraged to illustrate this function relationship. 
+$$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$ where $ H( \omega ) $ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index n and the thickness d. Here n is a function of frequency, and a Debye or Lorentz model could be leveraged to illustrate this function relationship. 
 
 $$n=\sqrt{Debye/Lorentz Model}$$
 
