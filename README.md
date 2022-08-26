@@ -82,7 +82,7 @@ $$\pmb{y}=\pmb{Ah}+\pmb{e}$$
 
 Where $y$ is the vector of actually measured signal, $h$ is a parameter vector, $e$ is the noise term, and matrix $A$ is consisted of i-laged referece signal $r^{i}$, i.e $A=\[r^{0}, r^{1}, ..., r^{n}\]$. The parameter vector $h$ is sparse, becasue the amplitude of multi-reflected pulses attenuates quickly after serveral reflections. To get this sparse parameter vector, a cost function constrined by a L1 norm is applied:
 
-$$\frac{1}{2}||Ah-y||_{2}^{2} + \lambda ||h||_{1}$$
+$$\frac{1}{2} (||Ah-y||)_{2}^{2} + \lambda (||h||)_{1}$$
 
 and minimized by a LASSO algorithm proposed by M. Tabassum (2018). 
 For more information about sparse deconvolution, please refer:<br>
