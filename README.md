@@ -9,22 +9,21 @@ $$E_{fit} (t)=k_1 E_r(t+\Delta t_{1}) + k_{2} E_r(t+\Delta t_{2})$$
 with parameters $k_{1}$, $\Delta t_{1}$, $k_{2}$, $\Delta t_{2}$. <br>
 The loss function we would like to minimize is the sum of squared residuals:
 $$Fitting Error = \sum_{i=1}^{n} ( E_{mea} (t_{i}) - E_{fit}(t_{i}))$$
-## Parameter Estimation for the time domain model
+
+### Parameter Estimation for the time domain model
 As mentioned before, this magnetic signal has no explicit function form, which means it would be hard to calculate the gradients of our loss function regarding the parameters $\Delta t_{1}$, $\Delta t_{2}$.
 In this case, we would like to leverage a heuristic algorithm called Genetic Algorithm(GA) to help us find the best estimated parameters. Here are some reasons why heuristic algorithm is applicable for our senerio:<br>
 1) GA algorithm is not a gradient-based optimization method so it could be leveraged to optimize target functions which are not differentiable.<br>
 2) The bounds for our parameter vector is known, which means the optimization searching would only happen within a specific solution space.<br>
-
-Once the parameters are calibrated, the thickness and refractive index could be calculated according to Time of Flight (TOF) theory and Fresnel’s Law.<br>
-
+Once the parameters are calibrated, the thickness and refractive index could be calculated according to Time of Flight (TOF) theory and Fresnel’s Equation.<br>
 For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:<br>
 ***[1] H. Zhang, M. He, L. Shi. Terahertz Thickness Measurement Based on Stochastic Optimization Algorithm, Spectrosc. Spectral Anal. 40(2020) 3066-3070.(in Chinese)***
 ### Some Adaptive Strategies for GA
-To gurantee the diversity in the late iterations, some adaptive strategies might be applied when updating the population.
+To keep the diversity in the late iterations, some adaptive strategies might be applied when updating the population.
 For mutation probabality:
-
+$$p_{m,i}=p_{m,lower}+(p_{m,upper}-p_{m_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
 For cross probabality:
-
+$$p_{c,i}=p_{c,lower}+(p_{c,upper}-p_{c_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
 The "lower" and "upper" mean the lower and upper bound of mutation/cross probability. Here are some fiiting results for the Time Domain Model:<br>
 ![Mea_Signal_Time_Domain](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/Sample_Signals.png)<br>
 ## Extract information from the frequency domain spectrum
@@ -59,8 +58,11 @@ When appling heuristic algorithms to find out a optimal solution, a large-enough
 ![Convergence Performance](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/iteration_convergence_performance.png)<br>
 There seems to be a Sigmoid-like curve between the number of ourtliers and the number of iterations. We could see that, in our case, at least 90 iterations are required to garantee the convergence of DE algorithm. But there are still about 25 outliers even though the number of iterations is relatively large. The next step of our research, is to enhance the stability and improve the convergence performance of our heuristic algorithm.
 ## Sparse Deconvolution Approach for Pulse Position Extraction
-Heuristic Optimization might not converge to a fixed point in every signal trail, and they are also time-consuming. To improve the stability and speed of our method, 
-
+Heuristic Optimization might not converge to a fixed point in every signal trail, and they are also time-consuming. To improve the stability and speed of our method, we reformulated our pulse detection problem into a sparse deconvolution problem:
+$$***y***=***Ah***+***e***$$
+Where ***y*** is the vector of actually measured signal, ***h*** is a parameter vector, ***e*** is the noise term, and matrix ***A*** is consisted of i-laged referece signal ***r***^{i}, i.e $***A***=[***r***^{0}, ***r***^{1}, ..., ***r***^{n}]$. The parameter vector ***h*** is sparse, becasue the amplitude of multi-reflected pulses attenuates quickly after serveral reflections. To get this sparse parameter vector, a cost function constrined by a L1 norm is applied:
+$$\frac{1}{2}||***Ah***-***y***||_{2}^{2}+\lambda||***h***||_{1}$$
+and minimized by a LASSO algorithm proposed by M. Tabassum (2018). 
 For more information about sparse deconvolution, please refer:<br>
 ***[6] F. Bobmann, G. Plonka, T. Peter, O. Nemitz and T. Schmitte, Sparse Deconvolution Methods for Ultrasonic NDT, J. Nondestruct Eval. 31 (2012) 225–244.***<br>
 ***[7] J. Dong, J.B. Jackson, M.Melis, et al. Terahertz frequency-wavelet domain deconvolution for stratigraphic and subsurface investigation of art painting, Optics Express 24(2016) 26972.***<br>
