@@ -8,7 +8,7 @@ Then the time domain model would be like:
 
 $$E_{fit} (t)=k_1 E_r(t+\Delta t_{1}) + k_{2} E_r(t+\Delta t_{2})$$
 
-with parameters $ k_{1} $, $ \Delta t_{1} $, $ k_{2} $, $ \Delta t_{2} $. <br>
+with parameters $k_{1}$ , $\Delta t_{1}$ , $k_{2}$ , $\Delta t_{2}$ . <br>
 The loss function we would like to minimize is the sum of squared residuals:
 
 $$Fitting Error = \sum_{i=1}^{n} ( E_{mea} (t_{i}) - E_{fit}(t_{i}))$$
