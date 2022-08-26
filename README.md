@@ -26,8 +26,7 @@ For mutation probabality:
 
 For cross probabality:
 
-The "lower" and "upper" mean the lower and upper bound of mutation/cross probability.<br>
-Here is some fiiting results for the Time Domain Model:<br>
+The "lower" and "upper" mean the lower and upper bound of mutation/cross probability. Here are some fiiting results for the Time Domain Model:<br>
 ![Mea_Signal_Time_Domain](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/Sample_Signals.png)<br>
 ## Extract information from the frequency domain spectrum
 We could also construct the model in frequency domain:
