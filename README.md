@@ -6,9 +6,7 @@ We consider our measured signal(the signal that has propagated through sample me
 ![Time_of_Flight](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/time_of_flight.png)
 Then the time domain model would be like:
 
-$$E_{fit} (t)=k_1 E_r(t+\Delta t_{1}) + k_{2} E_r(t+\Delta t_{2}) with parameters $k_{1}, \Delta t_{1}, k_{2}, \Delta t_{2}$$.
-
-The loss function we would like to minimize is the sum of squared residuals:
+$$E_{fit} (t)=k_1 E_r(t+\Delta t_{1}) + k_{2} E_r(t+\Delta t_{2})$$ with parameters $k_{1}, \Delta t_{1}, k_{2}, \Delta t_{2}$. The loss function we would like to minimize is the sum of squared residuals:
 
 $$Fitting Error = \sum_{i=1}^{n} ( E_{mea} (t_{i}) - E_{fit}(t_{i}))$$
 
