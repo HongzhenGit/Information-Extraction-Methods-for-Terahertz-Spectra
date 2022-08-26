@@ -1,5 +1,6 @@
 # Information Extraction Methods for Teraheartz Spectra
 Here is the repository for my postgraduation project. The main focus of this project is to extract information from the spectra of magnetic waves and find its application in the real engineering industry. Our signal is ditributed within a limited range in the time domain and does not have a explicit function form. 
+
 ## Extract information from the time domain spectrum
 We consider our measured signal(the signal that has propagated through sample mediums) as a linear combination of reference signals(at different time points), based on the concept of "Time-of-Flight":
 
@@ -20,6 +21,7 @@ Once the parameters are calibrated, the thickness and refractive index could be 
 
 For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:<br>
 ***[1] H. Zhang, M. He, L. Shi. Terahertz Thickness Measurement Based on Stochastic Optimization Algorithm, Spectrosc. Spectral Anal. 40(2020) 3066-3070.(in Chinese)***
+
 ### Some Adaptive Strategies for GA
 To keep the diversity in the late iterations, some adaptive strategies might be applied when updating the population.<br>
 For mutation probabality:
@@ -52,19 +54,25 @@ Then we could subsititue it into $Fitting Error$ to get the target optimization 
 Some references for Debye/Lorentz model:<br>
 ***[2] I. Kehuda, S. Khatun, K.J. Reza, M.M. Rahman, M.M. Fakir, Improved debye model for experimental approximation of human breast tissue properties at 6GHz ultra-wideband centre frequency, Int. J. Eng. Technol. 5 (2014) 4708–4717.***<br>
 ***[3] V.P. Drachev, U.K. Chettiar, A.V. Kildishev, The ag dielectric function in plasmonic metamaterials, Opt. Express 16 (2008) 1186–1195.***
+
 ### Parameter Estimation for the frequency domain model<br>
 Another heuristic algorithm named Differential Evolution(DE) is involved to estimate the parameters of our frequency model. Once the parameters are calibrated, the thickness and refractive index could be extracted simultaneously. We compared the performance of GA and DE, and it was observed that in most cases DE is the better one.<br>
 Like GA, here are some adaptive strategies designed for DE to gurantee its population diversity during late iterations:<br>
 1) DE/Rand/1. Random Selection
+
 $$H_{i}^{k}=V_{p1}^{k}+F(V_{p2}^{k}-V_{p3}^{k})$$
+
 2) DE/Best/1. Best Member and Random Selection
+
 $$H_{i}^{k}=V_{best}^{k}+F(V_{p1}^{k}-V_{p2}^{k})$$
+
 3) DE/Current to Best/1. Current Member, Best Member and Random Selection
+
 $$H_{i}^{k}=V_{i}^{k}+F(V_{best}^{k}-V_{i}^{k})+F(V_{p1}^{k}-V_{p2}^{k})$$
 
 Some references for Differential Algorithm:<br>
-***[4] A.K. Qin, V.L. Huang, P.N. Suganthan, Differential evolution algorithm with strategy adaptation for global numerical optimization, IEEE Trans. Evol. Comput. 13 (2009) 398–417.***
-For more details and discussions regarding the research above, please check my paper:
+***[4] A.K. Qin, V.L. Huang, P.N. Suganthan, Differential evolution algorithm with strategy adaptation for global numerical optimization, IEEE Trans. Evol. Comput. 13 (2009) 398–417.***<br>
+For more details and discussions regarding the research above, please check my paper:<br>
 ***[5] H. Zhang, L. Shi, M. He, Extension of terahertz time-domain spectroscopy: A micron-level thickness gauging technology, Opt. Commun. 506 (2022) 127597.***
 
 Here are some fiiting results for the Frequency Domain Model:
@@ -77,6 +85,7 @@ When appling heuristic algorithms to find out a optimal solution, a large-enough
 ![Convergence Performance](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/iteration_convergence_performance.png)
 
 There seems to be a Sigmoid-like curve between the number of ourtliers and the number of iterations. We could see that, in our case, at least 90 iterations are required to garantee the convergence of DE algorithm. But there are still about 25 outliers even though the number of iterations is relatively large. The next step of our research, is to enhance the stability and improve the convergence performance of our heuristic algorithm.
+
 ## Sparse Deconvolution Approach for Pulse Position Extraction
 Heuristic Optimization might not converge to a fixed point in every signal trail, and they are also time-consuming. To improve the stability and speed of our method, we reformulated our pulse detection problem into a sparse deconvolution problem:
 
