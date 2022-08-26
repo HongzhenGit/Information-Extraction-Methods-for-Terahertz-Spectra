@@ -49,7 +49,7 @@ By IFFT(Inverse Fast Fourier Transformation):
 
 $$E_{fit}(t)=IFFT(E_{fit}(\omega))=IFFT(E_{r}(\omega)H(\omega))$$
 
-Then we could subsititue it into $Fitting Error$ to get the target optimization loss function.
+Then we could subsititue it into _Fitting Error_ to get the target optimization loss function.
 
 Some references for Debye/Lorentz model:<br>
 ***[2] I. Kehuda, S. Khatun, K.J. Reza, M.M. Rahman, M.M. Fakir, Improved debye model for experimental approximation of human breast tissue properties at 6GHz ultra-wideband centre frequency, Int. J. Eng. Technol. 5 (2014) 4708–4717.***<br>
