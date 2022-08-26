@@ -70,6 +70,5 @@ For more information about sparse deconvolution, please refer:<br>
 ***[7] J. Dong, J.B. Jackson, M.Melis, et al. Terahertz frequency-wavelet domain deconvolution for stratigraphic and subsurface investigation of art painting, Optics Express 24(2016) 26972.***<br>
 ***[8] M. N. Tabassuma and E. Ollila, Sequential adaptive elastic net approach for single-snapshot source localization, J. Acoust. Soc. Am. 143(2018) 3873-3882***<br>
 Here are some priliminary results:<br>
-
 ![Sparse_Vector_and_Rebuild_Signal](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/vector_signal.png)<br>
 The figure on the left is the sparse parameter vector for the sample on the right. We expected there would be only 2 non-zero peaks, however, there are 5 in the actual parameter vector, and 3 of them locate closely. In the following research, we need to improve the sensitivity of this sparse deconvolution method. 
