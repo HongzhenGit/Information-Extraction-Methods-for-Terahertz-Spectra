@@ -32,7 +32,7 @@ Here is some fiiting results for the Time Domain Model:<br>
 ## Extract information from the frequency domain spectrum
 We could also construct the model in frequency domain:
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
-Where $H(\omega)$ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index ***n*** and the thickness ***d***. Here ***n*** is a function of frequency, and a Debye or Lorentz model could be leveraged to illustrate this function relationship. 
+Where $H(\omega)$ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index $n$ and the thickness $d$. Here $n$ is a function of frequency, and a Debye or Lorentz model could be leveraged to illustrate this function relationship. 
 $$n=\sqrt{Debye/Lorentz Model}$$
 By IFFT(Inverse Fast Fourier Transformation):
 $$E_{fit}(t)=IFFT(E_{fit}(\omega))=IFFT(E_{r}(\omega)H(\omega))$$
