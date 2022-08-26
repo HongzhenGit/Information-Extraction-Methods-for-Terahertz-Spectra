@@ -12,7 +12,11 @@ The loss function we would like to minimize is the sum of squared residuals:
 
 $$Fitting Error = \sum_{i=1}^{n} ( E_{mea} (t_{i}) - E_{fit}(t_{i}))$$
 ### Parameter Estimation for the time domain model
-As mentioned before, this magnetic signal has no explicit function form, which means it would be hard to calculate the gradients of our loss function regarding the parameters $\Delta t_{1}, \Delta t_{2}$.
+As mentioned before, this magnetic signal has no explicit function form, which means it would be hard to calculate the gradients of our loss function regarding the parameters 
+
+```math
+\Delta t_{1}, \Delta t_{2}
+```.
 In this case, we would like to leverage a heuristic algorithm called Genetic Algorithm(GA) to help us find the best estimated parameters. Here are some reasons why heuristic algorithm is applicable for our senerio:<br>
 1) GA algorithm is not a gradient-based optimization method so it could be leveraged to optimize target functions which are not differentiable.<br>
 2) The bounds for our parameter vector is known, which means the optimization searching would only happen within a specific solution space.<br>
