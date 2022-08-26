@@ -74,16 +74,17 @@ $$H_{i}^{k}=V_{i}^{k}+F(V_{best}^{k}-V_{i}^{k})+F(V_{p1}^{k}-V_{p2}^{k})$$
 
 Some references for Differential Algorithm:
 ***[4] A.K. Qin, V.L. Huang, P.N. Suganthan, Differential evolution algorithm with strategy adaptation for global numerical optimization, IEEE Trans. Evol. Comput. 13 (2009) 398–417.***
-
 For more details and discussions regarding the research above, please check my paper:
 ***[5] H. Zhang, L. Shi, M. He, Extension of terahertz time-domain spectroscopy: A micron-level thickness gauging technology, Opt. Commun. 506 (2022) 127597.***
 
-Here is some fiiting results for the Frequency Domain Model:
+Here are some fiiting results for the Frequency Domain Model:
 
 ![Mea_Signal Frequency Domain](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Fitting_results_for_Frequency_Domain_Method.png)
 ## Discussion about the convergence performance
-When appling heuristic algorithms to find out a optimal solution, a large-enough number of iterations would be required to guarantee its convergence. In our case, if the fitting error < 145, it will be a converged case, which means, the estimated parameters are as our desiring compared to our benchmark. We counted the number of trials with a larger fitting error than 145 out of 200 trials by different number of iterations, and illustrate their relationship:<br>
-![Convergence Performance](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/iteration_convergence_performance.png)<br>
+When appling heuristic algorithms to find out a optimal solution, a large-enough number of iterations would be required to guarantee its convergence. In our case, if the fitting error < 145, it will be a converged case, which means, the estimated parameters are as our desiring compared to our benchmark. We counted the number of trials with a larger fitting error than 145 out of 200 trials by different number of iterations, and illustrate their relationship:
+
+![Convergence Performance](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/iteration_convergence_performance.png)
+
 There seems to be a Sigmoid-like curve between the number of ourtliers and the number of iterations. We could see that, in our case, at least 90 iterations are required to garantee the convergence of DE algorithm. But there are still about 25 outliers even though the number of iterations is relatively large. The next step of our research, is to enhance the stability and improve the convergence performance of our heuristic algorithm.
 ## Sparse Deconvolution Approach for Pulse Position Extraction
 Heuristic Optimization might not converge to a fixed point in every signal trail, and they are also time-consuming. To improve the stability and speed of our method, we reformulated our pulse detection problem into a sparse deconvolution problem:
@@ -95,10 +96,13 @@ Where $y$ is the vector of actually measured signal, $h$ is a parameter vector, 
 $$\frac{1}{2} \parallel \pmb{Ah}-\pmb{y} \parallel _{2}^{2} + \lambda \parallel \pmb{h} \parallel _{1}$$
 
 and minimized by a LASSO algorithm proposed by M. Tabassum (2018). 
-For more information about sparse deconvolution, please refer:<br>
-***[6] F. Bobmann, G. Plonka, T. Peter, O. Nemitz and T. Schmitte, Sparse Deconvolution Methods for Ultrasonic NDT, J. Nondestruct Eval. 31 (2012) 225–244.***<br>
-***[7] J. Dong, J.B. Jackson, M.Melis, et al. Terahertz frequency-wavelet domain deconvolution for stratigraphic and subsurface investigation of art painting, Optics Express 24(2016) 26972.***<br>
-***[8] M. N. Tabassuma and E. Ollila, Sequential adaptive elastic net approach for single-snapshot source localization, J. Acoust. Soc. Am. 143(2018) 3873-3882***<br>
-Here are some priliminary results:<br>
-![Sparse_Vector_and_Rebuild_Signal](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/vector_signal.png)<br>
+
+For more information about sparse deconvolution, please refer:
+***[6] F. Bobmann, G. Plonka, T. Peter, O. Nemitz and T. Schmitte, Sparse Deconvolution Methods for Ultrasonic NDT, J. Nondestruct Eval. 31 (2012) 225–244.***
+***[7] J. Dong, J.B. Jackson, M.Melis, et al. Terahertz frequency-wavelet domain deconvolution for stratigraphic and subsurface investigation of art painting, Optics Express 24(2016) 26972.***
+***[8] M. N. Tabassuma and E. Ollila, Sequential adaptive elastic net approach for single-snapshot source localization, J. Acoust. Soc. Am. 143(2018) 3873-3882***
+Here are some priliminary results:
+
+![Sparse_Vector_and_Rebuild_Signal](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/vector_signal.png)
+
 The figure on the left is the sparse parameter vector for the sample on the right. We expected there would be only 2 non-zero peaks, however, there are 5 in the actual parameter vector, and 3 of them locate closely. In the following research, we need to improve the sensitivity of this sparse deconvolution method. 
