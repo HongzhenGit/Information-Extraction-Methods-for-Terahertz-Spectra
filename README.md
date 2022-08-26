@@ -59,9 +59,8 @@ When appling heuristic algorithms to find out a optimal solution, a large-enough
 ![Convergence Performance](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/iteration_convergence_performance.png)<br>
 There seems to be a Sigmoid-like curve between the number of ourtliers and the number of iterations. We could see that, in our case, at least 90 iterations are required to garantee the convergence of DE algorithm. But there are still about 25 outliers even though the number of iterations is relatively large. The next step of our research, is to enhance the stability and improve the convergence performance of our heuristic algorithm.
 ## Sparse Deconvolution Approach for Pulse Position Extraction
-Heuristic Optimization might not converge to a fixed point in every signal trail, and they are also time-consuming. To improve the stability and speed of our method, we reformulated our pulse detection problem into a sparse deconvolution problem:<br> 
-
-$$***y***=***Ah***+***e***$$<br>
+Heuristic Optimization might not converge to a fixed point in every signal trail, and they are also time-consuming. To improve the stability and speed of our method, we reformulated our pulse detection problem into a sparse deconvolution problem:
+<math-renderer class="js-inline-math" style="display: inline" data-static-url="https://github.githubassets.com/static" data-run-id="b70aff3e8174225c569d8f4183cee51b">$$***y***=***Ah***+***e***$$</math-renderer>
 Where ***y*** is the vector of actually measured signal, ***h*** is a parameter vector, ***e*** is the noise term, and matrix ***A*** is consisted of i-laged referece signal ***r***^{i}, i.e $***A***=[***r***^{0}, ***r***^{1}, ..., ***r***^{n}]$. The parameter vector ***h*** is sparse, becasue the amplitude of multi-reflected pulses attenuates quickly after serveral reflections. To get this sparse parameter vector, a cost function constrined by a L1 norm is applied:
 $$\frac{1}{2}||***Ah***-***y***||_{2}^{2}+\lambda||***h***||_{1}$$
 and minimized by a LASSO algorithm proposed by M. Tabassum (2018). 
