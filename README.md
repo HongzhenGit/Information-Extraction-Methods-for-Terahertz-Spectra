@@ -22,12 +22,11 @@ For more discussions on the results and any further analysis regarding the measu
 ### Some Adaptive Strategies for GA
 To gurantee the diversity in the late iterations, some adaptive strategies might be applied when updating the population.
 For mutation probabality:
-$$p_{m,i}=p_{m,lower}+(p_{m,upper}-p_{m_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
+
 For cross probabality:
-$$p_{c,i}=p_{c,lower}+(p_{c,upper}-p_{c_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
+
 The "lower" and "upper" mean the lower and upper bound of mutation/cross probability.<br>
 Here is some fiiting results for the Time Domain Model:<br>
-
 ![Mea_Signal_Time_Domain](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/Sample_Signals.png)<br>
 ## Extract information from the frequency domain spectrum
 We could also construct the model in frequency domain:
