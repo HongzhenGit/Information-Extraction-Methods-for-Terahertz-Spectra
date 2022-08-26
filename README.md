@@ -41,7 +41,7 @@ We could also construct the model in frequency domain:
 
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$ 
 
-Where H(w) is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index n and the thickness d. Here n is a function of frequency, and a Debye or Lorentz model could be leveraged to illustrate this function relationship. 
+Where _H(w)_ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index _n_ and the thickness _d_. Here _n_ is a function of frequency, and a Debye or Lorentz model could be leveraged to illustrate this function relationship. 
 
 $$n=\sqrt{Debye/Lorentz Model}$$
 
@@ -80,7 +80,7 @@ Here are some fiiting results for the Frequency Domain Model:
 ![Mea_Signal Frequency Domain](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Fitting_results_for_Frequency_Domain_Method.png)
 
 ## Discussion about the convergence performance
-When appling heuristic algorithms to find out a optimal solution, a large-enough number of iterations would be required to guarantee its convergence. In our case, if the fitting error < 145, it will be a converged case, which means, the estimated parameters are as our desiring compared to our benchmark. We counted the number of trials with a larger fitting error than 145 out of 200 trials by different number of iterations, and illustrate their relationship:
+When appling heuristic algorithms to find out a optimal solution, a large-enough number of iterations would be required to guarantee its convergence. In our case, if the fitting error _< 145_, it will be a converged case, which means, the estimated parameters are as our desiring compared to our benchmark. We counted the number of trials with a larger fitting error than 145 out of 200 trials by different number of iterations, and illustrate their relationship:
 
 ![Convergence Performance](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/iteration_convergence_performance.png)
 
@@ -91,16 +91,20 @@ Heuristic Optimization might not converge to a fixed point in every signal trail
 
 $$\pmb{y}=\pmb{Ah}+\pmb{e}$$
 
-Where $y$ is the vector of actually measured signal, $h$ is a parameter vector, $e$ is the noise term, and matrix $A$ is consisted of i-laged referece signal $r^{i}$, i.e $A=\[r^{0}, r^{1}, ..., r^{n}\]$. The parameter vector $h$ is sparse, becasue the amplitude of multi-reflected pulses attenuates quickly after serveral reflections. To get this sparse parameter vector, a cost function constrined by a L1 norm is applied:
+Where _***y***_ is the vector of actually measured signal, _***h***_ is a parameter vector, _***e***_ is the noise term, and matrix _***A***_ is consisted of i-laged referece signal 
+
+$$r^{i}, A=\[r^{0}, r^{1}, ..., r^{n}\]$$
+
+The parameter vector _***h***_ is sparse, becasue the amplitude of multi-reflected pulses attenuates quickly after serveral reflections. To get this sparse parameter vector, a cost function constrined by a L1 norm is applied:
 
 $$\frac{1}{2} \parallel \pmb{Ah}-\pmb{y} \parallel _{2}^{2} + \lambda \parallel \pmb{h} \parallel _{1}$$
 
 and minimized by a LASSO algorithm proposed by M. Tabassum (2018). 
 
-For more information about sparse deconvolution, please refer:
-***[6] F. Bobmann, G. Plonka, T. Peter, O. Nemitz and T. Schmitte, Sparse Deconvolution Methods for Ultrasonic NDT, J. Nondestruct Eval. 31 (2012) 225–244.***
-***[7] J. Dong, J.B. Jackson, M.Melis, et al. Terahertz frequency-wavelet domain deconvolution for stratigraphic and subsurface investigation of art painting, Optics Express 24(2016) 26972.***
-***[8] M. N. Tabassuma and E. Ollila, Sequential adaptive elastic net approach for single-snapshot source localization, J. Acoust. Soc. Am. 143(2018) 3873-3882***
+For more information about sparse deconvolution, please refer:<br>
+***[6] F. Bobmann, G. Plonka, T. Peter, O. Nemitz and T. Schmitte, Sparse Deconvolution Methods for Ultrasonic NDT, J. Nondestruct Eval. 31 (2012) 225–244.***<br>
+***[7] J. Dong, J.B. Jackson, M.Melis, et al. Terahertz frequency-wavelet domain deconvolution for stratigraphic and subsurface investigation of art painting, Optics Express 24(2016) 26972.***<br>
+***[8] M. N. Tabassuma and E. Ollila, Sequential adaptive elastic net approach for single-snapshot source localization, J. Acoust. Soc. Am. 143(2018) 3873-3882***<br>
 Here are some priliminary results:
 
 ![Sparse_Vector_and_Rebuild_Signal](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/vector_signal.png)
