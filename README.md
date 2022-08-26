@@ -37,7 +37,9 @@ The "lower" and "upper" mean the lower and upper bound of mutation/cross probabi
 ## Extract information from the frequency domain spectrum
 We could also construct the model in frequency domain:
 
-$$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$ where $ H( \omega ) $ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index n and the thickness d. Here n is a function of frequency, and a Debye or Lorentz model could be leveraged to illustrate this function relationship. 
+$$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$ 
+
+Where H(w) is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index n and the thickness d. Here n is a function of frequency, and a Debye or Lorentz model could be leveraged to illustrate this function relationship. 
 
 $$n=\sqrt{Debye/Lorentz Model}$$
 
@@ -47,28 +49,20 @@ $$E_{fit}(t)=IFFT(E_{fit}(\omega))=IFFT(E_{r}(\omega)H(\omega))$$
 
 Then we could subsititue it into $Fitting Error$ to get the target optimization loss function.
 
-Some references for Debye/Lorentz model:
-
+Some references for Debye/Lorentz model:<br>
 ***[2] I. Kehuda, S. Khatun, K.J. Reza, M.M. Rahman, M.M. Fakir, Improved debye model for experimental approximation of human breast tissue properties at 6GHz ultra-wideband centre frequency, Int. J. Eng. Technol. 5 (2014) 4708–4717.***<br>
 ***[3] V.P. Drachev, U.K. Chettiar, A.V. Kildishev, The ag dielectric function in plasmonic metamaterials, Opt. Express 16 (2008) 1186–1195.***
-### Parameter Estimation for the frequency domain model
-Another heuristic algorithm named Differential Evolution(DE) is involved to estimate the parameters of our frequency model. Once the parameters are calibrated, the thickness and refractive index could be extracted simultaneously. We compared the performance of GA and DE, and it was observed that in most cases DE is the better one. 
-
-Like GA, here are some adaptive strategies designed for DE to gurantee its population diversity during late iterations:
-
+### Parameter Estimation for the frequency domain model<br>
+Another heuristic algorithm named Differential Evolution(DE) is involved to estimate the parameters of our frequency model. Once the parameters are calibrated, the thickness and refractive index could be extracted simultaneously. We compared the performance of GA and DE, and it was observed that in most cases DE is the better one.<br>
+Like GA, here are some adaptive strategies designed for DE to gurantee its population diversity during late iterations:<br>
 1) DE/Rand/1. Random Selection
-
 $$H_{i}^{k}=V_{p1}^{k}+F(V_{p2}^{k}-V_{p3}^{k})$$
-
 2) DE/Best/1. Best Member and Random Selection
-
 $$H_{i}^{k}=V_{best}^{k}+F(V_{p1}^{k}-V_{p2}^{k})$$
-
 3) DE/Current to Best/1. Current Member, Best Member and Random Selection
-
 $$H_{i}^{k}=V_{i}^{k}+F(V_{best}^{k}-V_{i}^{k})+F(V_{p1}^{k}-V_{p2}^{k})$$
 
-Some references for Differential Algorithm:
+Some references for Differential Algorithm:<br>
 ***[4] A.K. Qin, V.L. Huang, P.N. Suganthan, Differential evolution algorithm with strategy adaptation for global numerical optimization, IEEE Trans. Evol. Comput. 13 (2009) 398–417.***
 For more details and discussions regarding the research above, please check my paper:
 ***[5] H. Zhang, L. Shi, M. He, Extension of terahertz time-domain spectroscopy: A micron-level thickness gauging technology, Opt. Commun. 506 (2022) 127597.***
@@ -76,6 +70,7 @@ For more details and discussions regarding the research above, please check my p
 Here are some fiiting results for the Frequency Domain Model:
 
 ![Mea_Signal Frequency Domain](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/Fitting_results_for_Frequency_Domain_Method.png)
+
 ## Discussion about the convergence performance
 When appling heuristic algorithms to find out a optimal solution, a large-enough number of iterations would be required to guarantee its convergence. In our case, if the fitting error < 145, it will be a converged case, which means, the estimated parameters are as our desiring compared to our benchmark. We counted the number of trials with a larger fitting error than 145 out of 200 trials by different number of iterations, and illustrate their relationship:
 
