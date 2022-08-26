@@ -21,9 +21,9 @@ For more discussions on the results and any further analysis regarding the measu
 ***[1] H. Zhang, M. He, L. Shi. Terahertz Thickness Measurement Based on Stochastic Optimization Algorithm, Spectrosc. Spectral Anal. 40(2020) 3066-3070.(in Chinese)***
 ### Some Adaptive Strategies for GA
 To gurantee the diversity in the late iterations, some adaptive strategies might be applied when updating the population.
-For mutation probabality:
+For mutation probabality
 $$p_{m,i}=p_{m,lower}+(p_{m,upper}-p_{m_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
-For cross probabality:
+For cross probabality
 $$p_{c,i}=p_{c,lower}+(p_{c,upper}-p_{c_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
 The "lower" and "upper" mean the lower and upper bound of mutation/cross probability.<br>
 Here is some fiiting results for the Time Domain Model:<br>
@@ -34,7 +34,7 @@ We could also construct the model in frequency domain:
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
 Where $H(\omega)$ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index ***n*** and the thickness ***d***. Here ***n*** is a function of frequency, and a Debye or Lorentz model could be leveraged to illustrate this function relationship. 
 $$n=\sqrt{Debye/Lorentz Model}$$
-By IFFT(Inverse Fast Fourier Transformation):
+By IFFT(Inverse Fast Fourier Transformation)
 $$E_{fit}(t)=IFFT(E_{fit}(\omega))=IFFT(E_{r}(\omega)H(\omega))$$
 Then we could subsititue it into $Fitting Error$ to get the target optimization loss function.<br>
 Some references for Debye/Lorentz model:<br>
