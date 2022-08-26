@@ -17,10 +17,10 @@ As mentioned before, this magnetic signal has no explicit function form, which m
 2) The bounds for our parameter vector is known, which means the optimization searching would only happen within a specific solution space.<br>
 Once the parameters are calibrated, the thickness and refractive index could be calculated according to Time of Flight (TOF) theory and Fresnel’s Equation.<br>
 
-For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:
+For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:<br>
 ***[1] H. Zhang, M. He, L. Shi. Terahertz Thickness Measurement Based on Stochastic Optimization Algorithm, Spectrosc. Spectral Anal. 40(2020) 3066-3070.(in Chinese)***
 ### Some Adaptive Strategies for GA
-To keep the diversity in the late iterations, some adaptive strategies might be applied when updating the population.
+To keep the diversity in the late iterations, some adaptive strategies might be applied when updating the population.<br>
 For mutation probabality:
 
 $$p_{m,i}=p_{m,lower}+(p_{m,upper}-p_{m_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
@@ -36,9 +36,7 @@ The "lower" and "upper" mean the lower and upper bound of mutation/cross probabi
 ## Extract information from the frequency domain spectrum
 We could also construct the model in frequency domain:
 
-$$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
-
-Where $H(\omega)$ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index $n$ and the thickness $d$. Here $n$ is a function of frequency, and a Debye or Lorentz model could be leveraged to illustrate this function relationship. 
+$$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$ Where $H(\omega)$ is the transfer function of our sample. Within this transfer function, we would like to estimate the reflection index $n$ and the thickness $d$. Here $n$ is a function of frequency, and a Debye or Lorentz model could be leveraged to illustrate this function relationship. 
 
 $$n=\sqrt{Debye/Lorentz Model}$$
 
