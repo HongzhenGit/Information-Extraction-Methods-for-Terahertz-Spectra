@@ -2,6 +2,7 @@
 Here is the repository for my postgraduation project. The main focus of this project is to extract information from the spectra of magnetic waves and find its application in the real engineering industry. Our signal is ditributed within a limited range in the time domain and does not have a explicit function form. 
 ## Extract information from the time domain spectrum
 We consider our measured signal(the signal that has propagated through sample mediums) as a linear combination of reference signals(at different time points), based on the concept of "Time-of-Flight":<br>
+
 ![Time_of_Flight](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/time_of_flight.png)<br>
 Then the time domain model would be like:
 $$E_{fit} (t)=k_1 E_r(t+\Delta t_1) + k_2 E_r(t+\Delta t_2)$$
@@ -25,8 +26,8 @@ For cross probabality:
 $$p_{c,i}=p_{c,lower}+(p_{c,upper}-p_{c_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
 The "lower" and "upper" mean the lower and upper bound of mutation/cross probability.<br>
 Here is some fiiting results for the Time Domain Model:<br>
-![Mea_Signal_Time_Domain](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/Sample_Signals.png)
-<br>
+
+![Mea_Signal_Time_Domain](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/Sample_Signals.png)<br>
 ## Extract information from the frequency domain spectrum
 We could also construct the model in frequency domain:
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$
@@ -68,6 +69,8 @@ For more information about sparse deconvolution, please refer:<br>
 ***[7] J. Dong, J.B. Jackson, M.Melis, et al. Terahertz frequency-wavelet domain deconvolution for stratigraphic and subsurface investigation of art painting, Optics Express 24(2016) 26972.***<br>
 ***[8] M. N. Tabassuma and E. Ollila, Sequential adaptive elastic net approach for single-snapshot source localization, J. Acoust. Soc. Am. 143(2018) 3873-3882***<br>
 Here are some priliminary results:<br>
+
 ![Sparse Parameter Vector](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/h_vector.PNG)
+
 ![Signal Rebuilt with Sparse Deconvolution](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/rebuilt_signal.PNG)<br>
 The figure on the left is the sparse parameter vector for the sample on the right. We expected there would be only 2 non-zero peaks, however, there are 5 in the actual parameter vector, and 3 of them locate closely. In the following research, we need to improve the sensitivity of this sparse deconvolution method. 
