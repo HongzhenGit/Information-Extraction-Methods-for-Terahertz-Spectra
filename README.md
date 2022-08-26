@@ -11,14 +11,13 @@ $$E_{fit} (t)=k_1 E_r(t+\Delta t_{1}) + k_{2} E_r(t+\Delta t_{2})$$ with paramet
 $$Fitting Error = \sum_{i=1}^{n} ( E_{mea} (t_{i}) - E_{fit}(t_{i}))$$
 
 ### Parameter Estimation for the time domain model
-As mentioned before, this magnetic signal has no explicit function form, which means it would be hard to calculate the gradients of our loss function regarding the parameters $t_{1}, \Delta t_{2}$.
-In this case, we would like to leverage a heuristic algorithm called Genetic Algorithm(GA) to help us find the best estimated parameters. Here are some reasons why heuristic algorithm is applicable for our senerio:
+As mentioned before, this magnetic signal has no explicit function form, which means it would be hard to calculate the gradients of our loss function regarding its parameters. In this case, we would like to leverage a heuristic algorithm called Genetic Algorithm(GA) to help us find the best estimated parameters. Here are some reasons why heuristic algorithm is applicable for our senerio:
 
 1) GA algorithm is not a gradient-based optimization method so it could be leveraged to optimize target functions which are not differentiable.<br>
 2) The bounds for our parameter vector is known, which means the optimization searching would only happen within a specific solution space.<br>
 Once the parameters are calibrated, the thickness and refractive index could be calculated according to Time of Flight (TOF) theory and Fresnel’s Equation.<br>
 
-For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:<br>
+For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:
 ***[1] H. Zhang, M. He, L. Shi. Terahertz Thickness Measurement Based on Stochastic Optimization Algorithm, Spectrosc. Spectral Anal. 40(2020) 3066-3070.(in Chinese)***
 ### Some Adaptive Strategies for GA
 To keep the diversity in the late iterations, some adaptive strategies might be applied when updating the population.
