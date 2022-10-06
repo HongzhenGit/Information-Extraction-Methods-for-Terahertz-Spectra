@@ -1,7 +1,7 @@
-# Information Extraction Methods for Teraheartz Spectra
+# Reconstruction Methods for Terahertz Signals
 Here is the repository for my postgraduation project. The main focus of this project is to extract information from the spectra of magnetic waves and find its application in the real engineering industry. Our signal is ditributed within a limited range in the time domain and does not have a explicit function form. 
 
-## Extract information from the time domain spectrum
+## Reconstruction Model in the Time Domain
 We consider our measured signal(the signal that has propagated through sample mediums) as a linear combination of reference signals(at different time points), based on the concept of "Time-of-Flight":
 
 ![Time_of_Flight](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/time_of_flight.png)
@@ -36,7 +36,7 @@ The "lower" and "upper" mean the lower and upper bound of mutation/cross probabi
 
 ![Mea_Signal_Time_Domain](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/Sample_Signals.png)
 
-## Extract information from the frequency domain spectrum
+## Reconstruction Model in the Frequency Domain
 We could also construct the model in frequency domain:
 
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$ 
