@@ -1,4 +1,4 @@
-# Model-based information extraction method for terahertz Signals
+# Model-based information extraction method for terahertz signals
 Here is the repository for my master's reearch project. The main focus of this project is to extract information from the spectra of terahertz pulses, and our method was successfully validated in numerical experiments as well as non-destructive applications such as coating layer detection and material characterization. The spectrum of our observed terahertz pulses is ditributed within 0.2-2 THz in the frequency domain. 
 
 ## Information extraction model in the time domain
