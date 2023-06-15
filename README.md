@@ -1,8 +1,8 @@
-# Reconstruction Methods for Terahertz Signals
-Here is the repository for my postgraduation project. The main focus of this project is to extract information from the spectra of magnetic waves and find its application in the real engineering industry. Our signal is ditributed within a limited range in the time domain and does not have a explicit function form. 
+# Model-based information extraction method for terahertz Signals
+Here is the repository for my master's reearch project. The main focus of this project is to extract information from the spectra of terahertz pulses, and our method was successfully validated in numerical experiments as well as non-destructive applications such as coating layer detection and material characterization. The spectrum of our observed terahertz pulses is ditributed within 0.2-2 THz in the frequency domain. 
 
-## Reconstruction Model in the Time Domain
-We consider our measured signal(the signal that has propagated through sample mediums) as a linear combination of reference signals(at different time points), based on the concept of "Time-of-Flight":
+## Information extraction model in the time domain
+We consider our measured signal(the terahertz pulses that has propagated through sample mediums) as a linear combination of reference signals which locate at different time points, based on the concept of "Time-of-Flight":
 
 ![Time_of_Flight](https://github.com/HongzhenGit/Modeling-For-Magnetic-Waves/blob/main/Assets/time_of_flight.png)
 
@@ -14,16 +14,18 @@ The loss function we would like to minimize is the sum of squared residuals:
 
 $$Fitting Error = \sum_{i=1}^{n} ( E_{mea} (t_{i}) - E_{fit}(t_{i}))$$
 
+once the minimum value of this loss function is reached, the ToF of each terahertz poulse could be extracted.
+
 ### Parameter Estimation for the time domain model
-As mentioned before, this magnetic signal has no explicit function form, which means it would be hard to calculate the gradients of our loss function regarding its parameters. In this case, we would like to leverage a heuristic algorithm called Genetic Algorithm(GA) to help us find the best estimated parameters. Here are some reasons why heuristic algorithm is applicable for our scenario:
+The terahertz pulse has no explicit function form, which means it would be hard to calculate the gradients of our loss function regarding its parameters. In this case, we would like to leverage a heuristic algorithm called Genetic Algorithm(GA) to help us find the best estimated parameters. Here are some reasons why heuristic algorithm is applicable for our scenario:
 1) GA algorithm is not a gradient-based optimization method so it could be leveraged to optimize target functions which are not differentiable.<br>
 2) The bounds for our parameter vector is known, which means the optimization searching would only happen within a specific solution space.<br>
 
 Once the parameters are calibrated, the thickness and refractive index could be calculated according to Time of Flight (TOF) theory and Fresnel’s Equation. For more discussions on the results and any further analysis regarding the measuremnt error, please check my paper:<br>
 ***[1] H. Zhang, M. He, L. Shi. Terahertz Thickness Measurement Based on Stochastic Optimization Algorithm, Spectrosc. Spectral Anal. 40(2020) 3066-3070.(in Chinese)***
 
-### Some Adaptive Strategies for GA
-To keep the diversity in the late iterations, some adaptive strategies might be applied when updating the population.<br>
+### Some adaptive strategies for GA
+To keep the population diversity in the late iterations, some adaptive strategies might be applied when updating the population.<br>
 For mutation probabality:
 
 $$p_{m,i}=p_{m,lower}+(p_{m,upper}-p_{m_lower})\frac{f_{i}-f_{min}}{f_{max}-f_{min}}$$
@@ -36,7 +38,7 @@ The "lower" and "upper" mean the lower and upper bound of mutation/cross probabi
 
 ![Mea_Signal_Time_Domain](https://github.com/HongzhenGit/Information-Extraction-Methods-for-Terahertz-Spectra/blob/main/Assets/Sample_Signals.png)
 
-## Reconstruction Model in the Frequency Domain
+## Information extraction model in the frequency domain
 We could also construct the model in frequency domain:
 
 $$E_{fit}(\omega)=E_{r}(\omega)H(\omega)$$ 
@@ -53,7 +55,7 @@ Then we could subsititue it into _Fitting Error_ to get the target optimization 
 ***[2] I. Kehuda, S. Khatun, K.J. Reza, M.M. Rahman, M.M. Fakir, Improved debye model for experimental approximation of human breast tissue properties at 6GHz ultra-wideband centre frequency, Int. J. Eng. Technol. 5 (2014) 4708–4717.***<br>
 ***[3] V.P. Drachev, U.K. Chettiar, A.V. Kildishev, The ag dielectric function in plasmonic metamaterials, Opt. Express 16 (2008) 1186–1195.***
 
-### Parameter Estimation for the frequency domain model<br>
+### Parameter estimation for the frequency domain model<br>
 Another heuristic algorithm named Differential Evolution(DE) is involved to estimate the parameters of our frequency model. Once the parameters are calibrated, the thickness and refractive index could be extracted simultaneously. We compared the performance of GA and DE, and it was observed that in most cases DE is the better one.<br>
 Like GA, here are some adaptive strategies designed for DE to gurantee its population diversity during late iterations:<br>
 1) DE/Rand/1. Random Selection
@@ -84,7 +86,7 @@ When appling heuristic algorithms to find out a optimal solution, a large-enough
 
 There seems to be a Sigmoid-like curve between the number of ourtliers and the number of iterations. We could see that, in our case, at least 90 iterations are required to garantee the convergence of DE algorithm. But there are still about 25 outliers even though the number of iterations is relatively large. The next step of our research, is to enhance the stability and improve the convergence performance of our heuristic algorithm.
 
-## Sparse Deconvolution Approach for Pulse Position Extraction
+## Sparse deconvolution approach for pulse position extraction
 Heuristic Optimization might not converge to a fixed point in every signal trail, and they are also time-consuming. To improve the stability and speed of our method, we reformulated our pulse detection problem into a sparse deconvolution problem:
 
 $$\pmb{y}=\pmb{Ah}+\pmb{e}$$
